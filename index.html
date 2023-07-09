@@ -41,6 +41,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      cursor: move;
     }
     
     /* CSS for the hexagon image */
@@ -91,26 +92,38 @@
       object-fit: cover;
       margin-left: 10px;
     }
+    
+    /* CSS for the reset button */
+    .seph-reset-button {
+      margin-top: 10px;
+    }
   </style>
   <script>
     // JavaScript for drag and drop functionality
     window.addEventListener('DOMContentLoaded', (event) => {
       const hexagon = document.querySelector('.seph-hexagon');
+      const resetButton = document.querySelector('.seph-reset-button');
       let dragStartX = 0;
       let dragStartY = 0;
+      let dragOffsetX = 0;
+      let dragOffsetY = 0;
       
       // Handle drag start event
       function handleDragStart(event) {
         dragStartX = event.clientX;
         dragStartY = event.clientY;
+        const { top, left } = hexagon.getBoundingClientRect();
+        dragOffsetX = dragStartX - left;
+        dragOffsetY = dragStartY - top;
       }
       
       // Handle drag event
       function handleDrag(event) {
-        const diffX = event.clientX - dragStartX;
-        const diffY = event.clientY - dragStartY;
+        event.preventDefault();
+        const posX = event.clientX - dragOffsetX;
+        const posY = event.clientY - dragOffsetY;
         
-        hexagon.style.transform = `translate(${diffX}px, ${diffY}px)`;
+        hexagon.style.transform = `translate(${posX}px, ${posY}px)`;
       }
       
       // Handle drag end event
@@ -118,10 +131,16 @@
         hexagon.style.transform = 'translate(0px, 0px)';
       }
       
+      // Handle reset button click event
+      function handleResetButtonClick() {
+        hexagon.style.transform = 'translate(0px, 0px)';
+      }
+      
       // Add event listeners for drag and drop events
-      hexagon.addEventListener('dragstart', handleDragStart);
-      hexagon.addEventListener('drag', handleDrag);
-      hexagon.addEventListener('dragend', handleDragEnd);
+      hexagon.addEventListener('mousedown', handleDragStart);
+      hexagon.addEventListener('mousemove', handleDrag);
+      hexagon.addEventListener('mouseup', handleDragEnd);
+      resetButton.addEventListener('click', handleResetButtonClick);
     });
   </script>
 </head>
@@ -129,7 +148,7 @@
   <!-- Square box -->
   <div class="seph-square-box">
     <!-- Hexagon-shaped box -->
-    <div class="seph-hexagon" draggable="true">
+    <div class="seph-hexagon">
       <!-- Hexagon image -->
       <img src="path_to_hexagon_image.png" alt="Hexagon Image">
       
@@ -150,6 +169,9 @@
       <img src="image3.jpg" alt="Image 3">
       <img src="image4.jpg" alt="Image 4">
     </div>
+    
+    <!-- Reset button -->
+    <button class="seph-reset-button">Reset</button>
   </div>
 </body>
 </html>

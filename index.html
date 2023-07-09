@@ -64,37 +64,15 @@
     .seph-gallery {
       display: flex;
       justify-content: center;
+      flex-wrap: wrap;
       margin-top: 10px;
     }
     
     .seph-gallery img {
-      width: 150px; /* Adjust width as needed */
-      height: 100px; /* Adjust height as needed */
+      width: calc(25% - 10px); /* Adjust width as needed */
+      height: auto;
       object-fit: cover;
-      margin-left: 10px;
-    }
-    
-    /* CSS for the social media links */
-    .seph-social-media {
-      display: flex;
-      justify-content: center;
-      margin-top: 10px;
-    }
-    
-    .seph-social-media li {
-      list-style: none;
       margin: 5px;
-    }
-    
-    .seph-social-media li a {
-      display: inline-block;
-      width: 30px; /* Adjust width as needed */
-      height: 30px; /* Adjust height as needed */
-      line-height: 30px; /* Adjust line-height as needed */
-      text-align: center;
-      color: #FFFFFF;
-      text-decoration: none;
-      background: rgba(0, 0, 0, 0.7);
     }
   </style>
 </head>
@@ -119,7 +97,6 @@
       <img src="https://xatimg.com/image/8zNCki6KwtTv.jpg" alt="Image 3">
       <img src="https://xatimg.com/image/8zNCki6KwtTv.jpg" alt="Image 4">
     </div>
-    
     
   </div>
 </body>

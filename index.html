@@ -71,8 +71,10 @@
     .seph-menu {
       position: absolute;
       bottom: 20px;
-      right: 20px;
+      left: 50%;
+      transform: translateX(-50%);
       display: flex;
+      justify-content: center;
     }
     
     .seph-menu ul {
@@ -95,8 +97,10 @@
     .seph-gallery {
       position: absolute;
       bottom: 20px;
-      right: 20px;
+      left: 50%;
+      transform: translateX(-50%);
       display: flex;
+      justify-content: center;
     }
     
     .seph-gallery img {
@@ -105,43 +109,13 @@
       object-fit: cover;
       margin-left: 10px;
     }
-    
-    /* CSS for the particle animation */
-    .seph-particle {
-      position: absolute;
-      background: #FFFFFF;
-      width: 5px; /* Adjust size as needed */
-      height: 5px; /* Adjust size as needed */
-      border-radius: 50%;
-      pointer-events: none;
-      
-      /* Animation */
-      animation-name: falling;
-      animation-duration: 2s;
-      animation-timing-function: linear;
-      animation-delay: 0s;
-      animation-iteration-count: infinite;
-      animation-direction: normal;
-      animation-fill-mode: both;
-    }
-    
-    @keyframes falling {
-      0% {
-        transform: translateY(-100px);
-        opacity: 0;
-      }
-      100% {
-        transform: translateY(100vh);
-        opacity: 1;
-      }
-    }
   </style>
 </head>
 <body>
   <!-- Hexagon-shaped box -->
   <div class="seph-hexagon" draggable="true">
     <!-- Hexagon image -->
-    <img src="https://xatimg.com/image/8zNCki6KwtTv.jpg" alt="Hexagon Image">
+    <img src="path_to_hexagon_image.png" alt="Hexagon Image">
     
     <!-- Text and social media links -->
     <div class="seph-hexagon-content">
@@ -171,10 +145,5 @@
     <img src="image3.jpg" alt="Image 3">
     <img src="image4.jpg" alt="Image 4">
   </div>
-  
-  <!-- Particle animation -->
-  <script>
-    // Add JavaScript code for particle animation here
-  </script>
 </body>
 </html>

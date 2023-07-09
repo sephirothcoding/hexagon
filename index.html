@@ -10,14 +10,14 @@
       overflow: hidden;
     }
 
-    /* CSS for the square box */
-    .seph-square-box {
+    /* CSS for the rectangle box */
+    .seph-rectangle-box {
       position: absolute;
       left: 50%;
       top: 50%;
       transform: translate(-50%, -50%);
-      width: 300px; /* Adjust size as needed */
-      height: 300px; /* Adjust size as needed */
+      width: 400px; /* Adjust width as needed */
+      height: 600px; /* Adjust height as needed */
       background: #FFFFFF;
       display: flex;
       flex-direction: column;
@@ -27,8 +27,8 @@
     
     /* CSS for the hexagon shape */
     .seph-hexagon {
-      width: 200px; /* Adjust size as needed */
-      height: 230px; /* Adjust size as needed */
+      width: 250px; /* Adjust width as needed */
+      height: 288px; /* Adjust height as needed */
       background: #FFFFFF;
       clip-path: polygon(
         50% 0%,  /* Top */
@@ -41,7 +41,6 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      cursor: move;
     }
     
     /* CSS for the hexagon image */
@@ -53,7 +52,7 @@
     
     /* CSS for the text and social media links */
     .seph-hexagon-content {
-      width: 140px;
+      width: 200px;
       padding: 10px;
       text-align: center;
       background: rgba(0, 0, 0, 0.7);
@@ -62,21 +61,26 @@
     }
     
     /* CSS for the social media links */
-    .seph-hexagon-content ul {
-      margin: 0;
-      padding: 0;
+    .seph-social-media {
       display: flex;
       justify-content: center;
+      margin-top: 10px;
     }
     
-    .seph-hexagon-content li {
+    .seph-social-media li {
       list-style: none;
       margin: 5px;
     }
     
-    .seph-hexagon-content li a {
+    .seph-social-media li a {
+      display: inline-block;
+      width: 30px; /* Adjust width as needed */
+      height: 30px; /* Adjust height as needed */
+      line-height: 30px; /* Adjust line-height as needed */
+      text-align: center;
       color: #FFFFFF;
       text-decoration: none;
+      background: rgba(0, 0, 0, 0.7);
     }
     
     /* CSS for the gallery of images */
@@ -98,55 +102,10 @@
       margin-top: 10px;
     }
   </style>
-  <script>
-    // JavaScript for drag and drop functionality
-    window.addEventListener('DOMContentLoaded', (event) => {
-      const hexagon = document.querySelector('.seph-hexagon');
-      const resetButton = document.querySelector('.seph-reset-button');
-      let dragStartX = 0;
-      let dragStartY = 0;
-      let dragOffsetX = 0;
-      let dragOffsetY = 0;
-      
-      // Handle drag start event
-      function handleDragStart(event) {
-        dragStartX = event.clientX;
-        dragStartY = event.clientY;
-        const { top, left } = hexagon.getBoundingClientRect();
-        dragOffsetX = dragStartX - left;
-        dragOffsetY = dragStartY - top;
-      }
-      
-      // Handle drag event
-      function handleDrag(event) {
-        event.preventDefault();
-        const posX = event.clientX - dragOffsetX;
-        const posY = event.clientY - dragOffsetY;
-        
-        hexagon.style.transform = `translate(${posX}px, ${posY}px)`;
-      }
-      
-      // Handle drag end event
-      function handleDragEnd() {
-        hexagon.style.transform = 'translate(0px, 0px)';
-      }
-      
-      // Handle reset button click event
-      function handleResetButtonClick() {
-        hexagon.style.transform = 'translate(0px, 0px)';
-      }
-      
-      // Add event listeners for drag and drop events
-      hexagon.addEventListener('mousedown', handleDragStart);
-      hexagon.addEventListener('mousemove', handleDrag);
-      hexagon.addEventListener('mouseup', handleDragEnd);
-      resetButton.addEventListener('click', handleResetButtonClick);
-    });
-  </script>
 </head>
 <body>
-  <!-- Square box -->
-  <div class="seph-square-box">
+  <!-- Rectangle box -->
+  <div class="seph-rectangle-box">
     <!-- Hexagon-shaped box -->
     <div class="seph-hexagon">
       <!-- Hexagon image -->
@@ -154,9 +113,10 @@
       
       <!-- Text and social media links -->
       <div class="seph-hexagon-content">
-        <ul>
-          <li><a href="#">Social Media Link 1</a></li>
-          <li><a href="#">Social Media Link 2</a></li>
+        <ul class="seph-social-media">
+          <li><a href="#" class="seph-social-link">S1</a></li>
+          <li><a href="#" class="seph-social-link">S2</a></li>
+          <li><a href="#" class="seph-social-link">S3</a></li>
           <!-- Add more social media links as needed -->
         </ul>
       </div>

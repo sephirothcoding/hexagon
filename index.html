@@ -67,32 +67,6 @@
       text-decoration: none;
     }
     
-    /* CSS for the menu */
-    .seph-menu {
-      position: absolute;
-      bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      justify-content: center;
-    }
-    
-    .seph-menu ul {
-      display: flex;
-      margin: 0;
-      padding: 0;
-    }
-    
-    .seph-menu li {
-      list-style: none;
-      margin-right: 10px;
-    }
-    
-    .seph-menu li a {
-      color: #FFFFFF;
-      text-decoration: none;
-    }
-    
     /* CSS for the gallery of images */
     .seph-gallery {
       position: absolute;
@@ -110,6 +84,38 @@
       margin-left: 10px;
     }
   </style>
+  <script>
+    // JavaScript for drag and drop functionality
+    window.addEventListener('DOMContentLoaded', (event) => {
+      const hexagon = document.querySelector('.seph-hexagon');
+      let dragStartX = 0;
+      let dragStartY = 0;
+      
+      // Handle drag start event
+      function handleDragStart(event) {
+        dragStartX = event.clientX;
+        dragStartY = event.clientY;
+      }
+      
+      // Handle drag event
+      function handleDrag(event) {
+        const diffX = event.clientX - dragStartX;
+        const diffY = event.clientY - dragStartY;
+        
+        hexagon.style.transform = `translate(${diffX}px, ${diffY}px)`;
+      }
+      
+      // Handle drag end event
+      function handleDragEnd() {
+        hexagon.style.transform = 'translate(0px, 0px)';
+      }
+      
+      // Add event listeners for drag and drop events
+      hexagon.addEventListener('dragstart', handleDragStart);
+      hexagon.addEventListener('drag', handleDrag);
+      hexagon.addEventListener('dragend', handleDragEnd);
+    });
+  </script>
 </head>
 <body>
   <!-- Hexagon-shaped box -->
@@ -125,17 +131,6 @@
         <!-- Add more social media links as needed -->
       </ul>
     </div>
-  </div>
-  
-  <!-- Menu -->
-  <div class="seph-menu">
-    <ul>
-      <li><a href="#">Menu Item 1</a></li>
-      <li><a href="#">Menu Item 2</a></li>
-      <li><a href="#">Menu Item 3</a></li>
-      <li><a href="#">Menu Item 4</a></li>
-      <!-- Add more menu items as needed -->
-    </ul>
   </div>
   
   <!-- Gallery of images -->

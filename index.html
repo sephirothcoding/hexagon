@@ -9,13 +9,24 @@
       height: 100vh;
       overflow: hidden;
     }
-    
-    /* CSS for the hexagon shape */
-    .seph-hexagon {
+
+    /* CSS for the square box */
+    .seph-square-box {
       position: absolute;
       left: 50%;
       top: 50%;
       transform: translate(-50%, -50%);
+      width: 300px; /* Adjust size as needed */
+      height: 300px; /* Adjust size as needed */
+      background: #FFFFFF;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    /* CSS for the hexagon shape */
+    .seph-hexagon {
       width: 200px; /* Adjust size as needed */
       height: 230px; /* Adjust size as needed */
       background: #FFFFFF;
@@ -27,6 +38,9 @@
         0% 75%,  /* Bottom Left */
         0% 25%   /* Top Left */
       );
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
     
     /* CSS for the hexagon image */
@@ -38,15 +52,12 @@
     
     /* CSS for the text and social media links */
     .seph-hexagon-content {
-      position: absolute;
-      bottom: -70px;
-      left: 50%;
-      transform: translateX(-50%);
       width: 140px;
       padding: 10px;
       text-align: center;
       background: rgba(0, 0, 0, 0.7);
       color: #FFFFFF;
+      margin-top: 10px;
     }
     
     /* CSS for the social media links */
@@ -69,12 +80,9 @@
     
     /* CSS for the gallery of images */
     .seph-gallery {
-      position: absolute;
-      bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
       display: flex;
       justify-content: center;
+      margin-top: 10px;
     }
     
     .seph-gallery img {
@@ -118,27 +126,30 @@
   </script>
 </head>
 <body>
-  <!-- Hexagon-shaped box -->
-  <div class="seph-hexagon" draggable="true">
-    <!-- Hexagon image -->
-    <img src="path_to_hexagon_image.png" alt="Hexagon Image">
-    
-    <!-- Text and social media links -->
-    <div class="seph-hexagon-content">
-      <ul>
-        <li><a href="#">Social Media Link 1</a></li>
-        <li><a href="#">Social Media Link 2</a></li>
-        <!-- Add more social media links as needed -->
-      </ul>
+  <!-- Square box -->
+  <div class="seph-square-box">
+    <!-- Hexagon-shaped box -->
+    <div class="seph-hexagon" draggable="true">
+      <!-- Hexagon image -->
+      <img src="path_to_hexagon_image.png" alt="Hexagon Image">
+      
+      <!-- Text and social media links -->
+      <div class="seph-hexagon-content">
+        <ul>
+          <li><a href="#">Social Media Link 1</a></li>
+          <li><a href="#">Social Media Link 2</a></li>
+          <!-- Add more social media links as needed -->
+        </ul>
+      </div>
     </div>
-  </div>
-  
-  <!-- Gallery of images -->
-  <div class="seph-gallery">
-    <img src="image1.jpg" alt="Image 1">
-    <img src="image2.jpg" alt="Image 2">
-    <img src="image3.jpg" alt="Image 3">
-    <img src="image4.jpg" alt="Image 4">
+    
+    <!-- Gallery of images -->
+    <div class="seph-gallery">
+      <img src="image1.jpg" alt="Image 1">
+      <img src="image2.jpg" alt="Image 2">
+      <img src="image3.jpg" alt="Image 3">
+      <img src="image4.jpg" alt="Image 4">
+    </div>
   </div>
 </body>
 </html>

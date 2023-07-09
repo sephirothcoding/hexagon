@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Blue Blackground Gradient</title>
+  <title>Blue Background Gradient</title>
   <style>
     /* CSS for the background gradient */
     body {
-      background: linear-gradient(to bottom, #0000FF, #000000);
+      background: linear-gradient(to bottom, #6495ED, #0000FF);
       height: 100vh;
       overflow: hidden;
     }
     
     /* CSS for the hexagon shape */
-    .hexagon {
+    .seph-hexagon {
       position: absolute;
       left: 50%;
       top: 50%;
@@ -30,33 +30,76 @@
     }
     
     /* CSS for the hexagon image */
-    .hexagon img {
+    .seph-hexagon img {
       width: 100%; /* Adjust size as needed */
       height: auto;
       object-fit: cover;
     }
     
     /* CSS for the text and social media links */
-    .hexagon .content {
+    .seph-hexagon .content {
       position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
+      bottom: -70px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 140px;
       padding: 10px;
       text-align: center;
       background: rgba(0, 0, 0, 0.7);
       color: #FFFFFF;
     }
     
-    /* CSS for the gallery of images */
-    .gallery {
+    /* CSS for the social media links */
+    .seph-hexagon .content ul {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+    }
+    
+    .seph-hexagon .content li {
+      list-style: none;
+      margin: 5px;
+    }
+    
+    .seph-hexagon .content li a {
+      color: #FFFFFF;
+      text-decoration: none;
+    }
+    
+    /* CSS for the menu */
+    .seph-menu {
       position: absolute;
       bottom: 20px;
       right: 20px;
       display: flex;
     }
     
-    .gallery img {
+    .seph-menu ul {
+      display: flex;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .seph-menu li {
+      list-style: none;
+      margin-right: 10px;
+    }
+    
+    .seph-menu li a {
+      color: #FFFFFF;
+      text-decoration: none;
+    }
+    
+    /* CSS for the gallery of images */
+    .seph-gallery {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      display: flex;
+    }
+    
+    .seph-gallery img {
       width: 80px; /* Adjust size as needed */
       height: 80px; /* Adjust size as needed */
       object-fit: cover;
@@ -64,7 +107,7 @@
     }
     
     /* CSS for the particle animation */
-    .particle {
+    .seph-particle {
       position: absolute;
       background: #FFFFFF;
       width: 5px; /* Adjust size as needed */
@@ -76,13 +119,12 @@
 </head>
 <body>
   <!-- Hexagon-shaped box -->
-  <div class="hexagon" draggable="true">
+  <div class="seph-hexagon" draggable="true">
     <!-- Hexagon image -->
     <img src="path_to_hexagon_image.png" alt="Hexagon Image">
     
     <!-- Text and social media links -->
-    <div class="content">
-      <h2>Text</h2>
+    <div class="seph-hexagon-content">
       <ul>
         <li><a href="#">Social Media Link 1</a></li>
         <li><a href="#">Social Media Link 2</a></li>
@@ -91,8 +133,19 @@
     </div>
   </div>
   
+  <!-- Menu -->
+  <div class="seph-menu">
+    <ul>
+      <li><a href="#">Menu Item 1</a></li>
+      <li><a href="#">Menu Item 2</a></li>
+      <li><a href="#">Menu Item 3</a></li>
+      <li><a href="#">Menu Item 4</a></li>
+      <!-- Add more menu items as needed -->
+    </ul>
+  </div>
+  
   <!-- Gallery of images -->
-  <div class="gallery">
+  <div class="seph-gallery">
     <img src="image1.jpg" alt="Image 1">
     <img src="image2.jpg" alt="Image 2">
     <img src="image3.jpg" alt="Image 3">
